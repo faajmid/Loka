@@ -1,5 +1,5 @@
 /*
-  Loka Example — Light (Professional Guide)
+  Loka Example — Light (Guide)
   -----------------------------------------
   Project: Loka Robot
   Author : Fahad Al Ajmi
