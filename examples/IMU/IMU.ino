@@ -1,5 +1,5 @@
 /*
-  Loka Example — IMU (Professional Guide)
+  Loka Example — IMU (Guide)
   ---------------------------------------
   Project: Loka Robot
   Author : Fahad Al Ajmi
