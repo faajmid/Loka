@@ -91,20 +91,20 @@ LokaToF tof;
 
 void setup() {
   Serial.begin(115200);
-  mcu.Init(LIGHT + ROT + GYR + TAP);   // enable IMU + Light
-  tof.Init(Z16);           // ToF in 4×4 mode
+  mcu.Init(LIGHT + ROT + GYR + TAP);  // enable IMU + Light
+  tof.Init(Z16);                      // ToF in 4×4 mode
 }
 
 void loop() {
-  mcu.Run();               // update IMU + Light
-  tof.Run(10);             // update ToF at 10 Hz
+  mcu.Run();                         // update IMU + Light
+  tof.Run(10);                       // update ToF at 10 Hz
 
   mcu.PrintIMU();
   mcu.PrintLight();
 
   // ToF printing
-  tof.PrintZones();        // full grid
-  tof.PrintZonesAvg();     // averages: Left | Middle | Right
+  tof.PrintZones();                  // full grid
+  tof.PrintZonesAvg();               // averages: Left | Middle | Right
   delay(100);
 }
 ```
@@ -121,15 +121,15 @@ LokaToF tof;
 
 void setup() {
   Serial.begin(115200);
-  tof.Init(Z16);   // choose 4×4 or 8×8
-  tof.Left();      // default groups
+  tof.Init(Z16);                   // choose 4×4 or 8×8
+  tof.Left();                      // default groups
   tof.Middle();
   tof.Right();
 }
 
 void loop() {
   tof.Run(30);
-  tof.PrintZonesAvg();   // L | M | R averages
+  tof.PrintZonesAvg();              // L | M | R averages
   delay(100);
 }
 ```
@@ -142,7 +142,7 @@ LokaMCU loka;
 void setup() {
   Serial.begin(115200);
   loka.Init(LIGHT);
-  loka.SetDarkLED(1, 250, true, AMB);  // auto headlight
+  loka.SetDarkLED(1, 250, true, AMB); // auto headlight
 }
 
 void loop() {
@@ -160,7 +160,7 @@ LokaMCU loka;
 void setup() {
   Serial.begin(115200);
   loka.Init(ROT + GYR + TAP);
-  loka.TapSens(3);   // sensitivity
+  loka.TapSens(3);                   // sensitivity
 }
 
 void loop() {
