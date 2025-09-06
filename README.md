@@ -7,7 +7,6 @@ It shows how a robot can sense, decide, and act using only a few parts.
 The design is small, low cost, and easy to build, yet it covers the main topics: sensing, control, and motion.
 
 ![LokaBot Obstacle Avoidance](images/lokabot_avoidance.GIF)
-*Obstacle avoidance demo using VL53L7CX sensor*
 
 ### Key Ideas
 
@@ -25,14 +24,14 @@ but also shows good engineering choices for more advanced users.
 
 - Zone based obstacle avoidance with VL53L7CX  
 - Ambient light and proximity sensing with VCNL4040
-![LokaBot Lights](images/lokabot_lights.GIF)  
-  *Auto lights on/off demo*
 - Orientation, gyro, and tap detection with BNO085 IMU  
 - Simple motor control API for left and right motors (coming soon)  
 - One piece 3D printed body and custom wheels  
 - Press-fit slots for motor driver and ToF sensor (no screws needed)  
 - DIY silicone tires for better grip  
 - USB-C charging and onboard LiPo battery support
+
+![LokaBot Lights](images/lokabot_lights.GIF)
 
 ## Hardware
 
@@ -63,8 +62,8 @@ Instead of three different libraries, you only need `Loka`.
 - **Light sensor (VCNL4040)**: ambient and proximity sensing, auto headlight control  
 - **Time of Flight (VL53L7CX)**: multi-zone ranging, split into Left / Middle / Right  
 - **Motors**: simple control API for left and right motors *(coming soon)*
+
 ![LokaBot Motors](images/lokabot_motors.GIF)  
-  *Motor control test*
 
 ### Core Classes
 
