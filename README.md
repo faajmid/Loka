@@ -30,6 +30,7 @@ but also shows good engineering choices for more advanced users.
 
 ## Features
 
+- Ultra compact size: 51 × 28 × 23 mm (51 × 54 × 23 mm with wheels) 
 - Zone based obstacle avoidance with VL53L7CX  
 - Ambient light and proximity sensing with VCNL4040
 - Orientation, gyro, and tap detection with BNO085 IMU  
