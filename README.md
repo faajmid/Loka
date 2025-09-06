@@ -39,6 +39,7 @@ but also shows good engineering choices for more advanced users.
   <img src="images/lokabot_lights.GIF" alt="LokaBot lights" width="700"/>
 </p>
 <br><br>
+
 ## Hardware
 
 Loka is built with a mix of custom 3D printed parts and standard components.  
