@@ -6,7 +6,9 @@ Loka is designed as a simple but complete robot for learning robotics.
 It shows how a robot can sense, decide, and act using only a few parts.  
 The design is small, low cost, and easy to build, yet it covers the main topics: sensing, control, and motion.
 
-![LokaBot Obstacle Avoidance](images/lokabot_avoidance.GIF)
+<p align="center">
+  <img src="images/lokabot_avoidance.GIF" alt="LokaBot Obstacle Avoidance" width="500"/>
+</p>
 
 ### Key Ideas
 
