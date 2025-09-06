@@ -3,12 +3,8 @@
 ![LokaBot](images/lokabot.jpg)
 *AI render*
 
-LokaBot is a small, low-cost, and complete robot for learning robotics.  
-It shows how a robot can sense, decide, and act using only a few parts.  
-The body is 3D printed, the electronics are minimal, and the assembly requires no screws.
-
-This project also includes the **Loka Library**, a custom Arduino library that unifies the sensors and motors under one simple API.  
-With it, you can access the IMU, light sensor, and time of flight sensor with easy commands, instead of juggling multiple libraries.
+LokaBot is an open source palm sized autonomous robot powered by ESP32 and programmed with the Arduino IDE.  
+It brings advanced robotics concepts such as orientation sensing, multi zone distance mapping, and autonomous navigation into a very small and affordable platform.
 
 <br><br>
   <p align="center">
@@ -16,6 +12,12 @@ With it, you can access the IMU, light sensor, and time of flight sensor with ea
 </div>
 <br><br>
 
+The project also includes the **Loka Library**, which unifies the IMU, light sensor, time of flight sensor, and motor control under one simple API.  
+This removes the need for multiple libraries and makes it easy to try obstacle avoidance, light following, or IMU based actions.
+
+The goal is to make robotics approachable through a compact and easy to use robot.  
+LokaBot is built to support education, hobby projects, and early research by providing an affordable hands on platform.  
+By combining sensing, decision making, and motion in a tiny robot, Loka hopes to bring STEM learning to more people and inspire newcomers of all ages to explore robotics.
 
 ## Key Ideas
 
