@@ -40,8 +40,8 @@ but also shows good engineering choices for more advanced users.
 - DIY silicone tires for better grip  
 - USB-C charging and onboard LiPo battery support
 <br><br>
-<p align="center">
-  <img src="images/lokabot_lights.GIF" alt="LokaBot lights" width="600"/>
+<p align="left">
+  <img src="images/lokabot_lights.GIF" alt="LokaBot lights" width="700"/>
 </p>
 <br><br>
 
@@ -75,8 +75,8 @@ Instead of three different libraries, you only need `Loka`.
 - **Time of Flight VL53L7CX**: multi-zone ranging, split into Left / Middle / Right  
 - **Motors**: simple control API for left and right motors *(coming soon)*
 <br><br>
-<p align="center">
-  <img src="images/lokabot_motors.GIF" alt="LokaBot motors" width="600"/>
+<p align="left">
+  <img src="images/lokabot_motors.GIF" alt="LokaBot motors" width="700"/>
 </p>
 <br><br>
 
