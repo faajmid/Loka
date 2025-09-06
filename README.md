@@ -6,12 +6,7 @@
 LokaBot is an open source palm sized autonomous robot powered by ESP32 and programmed with the Arduino IDE.  
 It brings advanced robotics concepts such as orientation sensing, multi zone distance mapping, and autonomous navigation into a very small and affordable platform.
 
-<img src="images/lokabot_avoidance.GIF" 
-     alt="LokaBot Obstacle Avoidance" 
-     width="400" 
-     align="right" 
-     style="margin-right:40px; margin-bottom:20px;"/>
-
+<img src="images/lokabot_avoidance.GIF" alt="LokaBot Obstacle Avoidance" width="350" align="right" hspace="0"/>
 
 The project also includes the **Loka Library**, which unifies the IMU, light sensor, time of flight sensor, and motor control under one simple API.  
 This removes the need for multiple libraries and makes it easy to try obstacle avoidance, light following, or IMU based actions.
