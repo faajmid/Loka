@@ -8,7 +8,7 @@ The design is small, low cost, and easy to build, yet it covers the main topics:
 
 
 <p align="center">
-  <img src="images/lokabot_avoidance.GIF" alt="LokaBot Obstacle Avoidance" width="600"/>
+  <img src="images/lokabot_avoidance.GIF" alt="LokaBot Obstacle Avoidance" width="1000"/>
 </p>
 
 
