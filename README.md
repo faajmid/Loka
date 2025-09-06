@@ -1,11 +1,13 @@
 ## LokaBot
 
+![LokaBot](images/lokabot.jpg)
 
 Loka is designed as a simple but complete robot for learning robotics.  
 It shows how a robot can sense, decide, and act using only a few parts.  
 The design is small, low cost, and easy to build, yet it covers the main topics: sensing, control, and motion.
 
-![LokaBot](images/lokabot.jpg)
+![LokaBot Obstacle Avoidance](images/lokabot_avoidance.gif)
+*Obstacle avoidance demo using VL53L7CX sensor*
 
 ### Key Ideas
 
@@ -21,8 +23,10 @@ but also shows good engineering choices for more advanced users.
 
 ## Features
 
-- Zone-based obstacle avoidance with VL53L7CX  
-- Ambient light and proximity sensing with VCNL4040  
+- Zone based obstacle avoidance with VL53L7CX  
+- Ambient light and proximity sensing with VCNL4040
+![LokaBot Lights](images/lokabot_lights.gif)  
+  *Auto lights on/off demo*
 - Orientation, gyro, and tap detection with BNO085 IMU  
 - Simple motor control API for left and right motors (coming soon)  
 - One piece 3D printed body and custom wheels  
@@ -36,12 +40,12 @@ Loka is built with a mix of custom 3D printed parts and standard components.
 The design keeps the part count low while still covering the essentials.
 
 - **CodeCell board** (ESP32-C3 with onboard VCNL4040 light sensor and BNO085 IMU)  
-- **VL53L7CX time-of-flight sensor** for 4×4 or 8×8 distance zones  
+- **VL53L7CX time of flight sensor** for 4×4 or 8×8 distance zones  
 - **Two N10 DC motors (140 RPM)** with DRV8833 motor driver  
 - **LiPo battery**: 200 mAh tested, 400 mAh recommended for longer runtime  
 - **LED battery indicator module**  
 - **Mini power switch with LED**  
-- **One-piece 3D printed body** and **custom wheels**  
+- **One piece 3D printed body** and **custom wheels**  
 - **DIY silicone tires** molded to fit the printed wheels  
 - **Front caster ball** made from a small perfume roller ball
 
@@ -57,13 +61,15 @@ Instead of three different libraries, you only need `Loka`.
 
 - **IMU (BNO085)**: orientation, gyro, tap detection  
 - **Light sensor (VCNL4040)**: ambient and proximity sensing, auto headlight control  
-- **Time-of-Flight (VL53L7CX)**: multi-zone ranging, split into Left / Middle / Right  
-- **Motors**: simple control API for left and right motors *(coming soon)*  
+- **Time of Flight (VL53L7CX)**: multi-zone ranging, split into Left / Middle / Right  
+- **Motors**: simple control API for left and right motors *(coming soon)*
+![LokaBot Motors](images/lokabot_motors.gif)  
+  *Motor control test*
 
 ### Core Classes
 
 - `LokaMCU` → IMU and light  
-- `LokaToF` → time-of-flight distance sensing  
+- `LokaToF` → time of flight distance sensing  
 - `LokaMotors` → motor control  
 
 ### Example
@@ -77,19 +83,19 @@ LokaToF tof;
 void setup() {
   Serial.begin(115200);
   mcu.Init(LIGHT + ROT + GYR + TAP);   // enable IMU + Light
-  tof.Init(Z16);                       // ToF in 4×4 mode
+  tof.Init(Z16);           // ToF in 4×4 mode
 }
 
 void loop() {
-  mcu.Run();                           // update IMU + Light
-  tof.Run(10);                         // update ToF at 10 Hz
+  mcu.Run();               // update IMU + Light
+  tof.Run(10);             // update ToF at 10 Hz
 
   mcu.PrintIMU();
   mcu.PrintLight();
 
   // ToF printing
-  tof.PrintZones();                    // full grid
-  tof.PrintZonesAvg();                 // averages: Left | Middle | Right
+  tof.PrintZones();        // full grid
+  tof.PrintZonesAvg();     // averages: Left | Middle | Right
   delay(100);
 }
 ```
