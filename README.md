@@ -3,23 +3,19 @@
 ![LokaBot](images/lokabot.jpg)
 *AI render*
 
+LokaBot is a small, low-cost, and complete robot for learning robotics.  
+It shows how a robot can sense, decide, and act using only a few parts.  
+The body is 3D printed, the electronics are minimal, and the assembly requires no screws.
+
+This project also includes the **Loka Library**, a custom Arduino library that unifies the sensors and motors under one simple API.  
+With it, you can access the IMU, light sensor, and time of flight sensor with easy commands, instead of juggling multiple libraries.
+
 <br><br>
-<table>
-  <tr>
-    <td width="60%">
-      <p>
-        LokaBot is designed as a simple but complete robot for learning robotics.<br>
-        It shows how a robot can sense, decide, and act using only a few parts.<br>
-        The design is small, low cost, and easy to build, yet it covers the main topics:  
-        sensing, control, and motion.
-      </p>
-    </td>
-    <td width="40%">
-      <img src="images/lokabot_avoidance.GIF" alt="LokaBot Obstacle Avoidance" width="100%"/>
-    </td>
-  </tr>
-</table>
+  <p align="center">
+    <img src="images/lokabot_avoidance.GIF" alt="LokaBot Obstacle Avoidance" width="600"/>
+</div>
 <br><br>
+
 
 ## Key Ideas
 
@@ -45,7 +41,7 @@ but also shows good engineering choices for more advanced users.
 - USB-C charging and onboard LiPo battery support
 <br><br>
 <p align="center">
-  <img src="images/lokabot_lights.GIF" alt="LokaBot lights" width="700"/>
+  <img src="images/lokabot_lights.GIF" alt="LokaBot lights" width="600"/>
 </p>
 <br><br>
 
@@ -80,7 +76,7 @@ Instead of three different libraries, you only need `Loka`.
 - **Motors**: simple control API for left and right motors *(coming soon)*
 <br><br>
 <p align="center">
-  <img src="images/lokabot_motors.GIF" alt="LokaBot motors" width="700"/>
+  <img src="images/lokabot_motors.GIF" alt="LokaBot motors" width="600"/>
 </p>
 <br><br>
 
