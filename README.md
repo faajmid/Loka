@@ -6,17 +6,11 @@
 Loka is designed as a simple but complete robot for learning robotics.  
 It shows how a robot can sense, decide, and act using only a few parts.  
 The design is small, low cost, and easy to build, yet it covers the main topics: sensing, control, and motion.
-
-
-
-
+<br>
 <p align="center">
   <img src="images/lokabot_avoidance.GIF" alt="LokaBot Obstacle Avoidance" width="500"/>
 </p>
-
-
-
-
+<br>
 ### Key Ideas
 
 - One VL53L7CX sensor is split into left, middle, and right zones for navigation.  
@@ -39,17 +33,11 @@ but also shows good engineering choices for more advanced users.
 - Press-fit slots for motor driver and ToF sensor (no screws needed)  
 - DIY silicone tires for better grip  
 - USB-C charging and onboard LiPo battery support
-
-
-
-
+<br>
 <p align="center">
   <img src="images/lokabot_lights.GIF" alt="LokaBot lights" width="500"/>
 </p>
-
-
-
-
+<br>
 ## Hardware
 
 Loka is built with a mix of custom 3D printed parts and standard components.  
@@ -79,17 +67,11 @@ Instead of three different libraries, you only need `Loka`.
 - **Light sensor (VCNL4040)**: ambient and proximity sensing, auto headlight control  
 - **Time of Flight (VL53L7CX)**: multi-zone ranging, split into Left / Middle / Right  
 - **Motors**: simple control API for left and right motors *(coming soon)*
-
-
-
-
+<br>
 <p align="center">
   <img src="images/lokabot_motors.GIF" alt="LokaBot motors" width="500"/>
 </p>
-
-
-
-
+<br>
 ### Core Classes
 
 - `LokaMCU` → IMU and light  
