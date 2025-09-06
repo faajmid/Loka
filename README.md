@@ -1,10 +1,11 @@
 # LokaBot
 
-![LokaBot](images/lokabot.jpg)
-*AI render*
-
 LokaBot is an open source palm sized autonomous robot powered by ESP32 and programmed with the Arduino IDE.  
 It brings advanced robotics concepts such as orientation sensing, multi zone distance mapping, and autonomous navigation into a very small and affordable platform.
+
+
+![LokaBot](images/lokabot.jpg)
+*AI render*
 
 
 <img src="images/lokabot_avoidance.GIF" alt="LokaBot Obstacle Avoidance" width="350" align="right"/>
