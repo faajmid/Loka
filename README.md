@@ -3,13 +3,23 @@
 ![LokaBot](images/lokabot.jpg)
 *AI render*
 
-Loka is designed as a simple but complete robot for learning robotics.  
-It shows how a robot can sense, decide, and act using only a few parts.  
-The design is small, low cost, and easy to build, yet it covers the main topics: sensing, control, and motion.
 <br><br>
-<p align="center">
-  <img src="images/lokabot_avoidance.GIF" alt="LokaBot Obstacle Avoidance" width="700"/>
-</p>
+<table>
+  <tr>
+    <td width="40%">
+      <img src="images/lokabot_avoidance.GIF" alt="LokaBot Obstacle Avoidance" width="100%"/>
+    </td>
+    <td width="60%">
+      <h2>LokaBot</h2>
+      <p>
+        LokaBot is designed as a simple but complete robot for learning robotics.<br>
+        It shows how a robot can sense, decide, and act using only a few parts.<br>
+        The design is small, low cost, and easy to build, yet it covers the main topics:
+        sensing, control, and motion.
+      </p>
+    </td>
+  </tr>
+</table>
 <br><br>
 
 ## Key Ideas
