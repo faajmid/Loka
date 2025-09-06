@@ -8,7 +8,7 @@ The design is small, low cost, and easy to build, yet it covers the main topics:
 
 
 <p align="center">
-  <img src="images/lokabot_avoidance.GIF" alt="LokaBot Obstacle Avoidance" width="1000"/>
+  <img src="images/lokabot_avoidance.GIF" alt="LokaBot Obstacle Avoidance" width="800"/>
 </p>
 
 
@@ -37,7 +37,7 @@ but also shows good engineering choices for more advanced users.
 
 
 <p align="center">
-  <img src="images/lokabot_lights.GIF" alt="LokaBot lights" width="600"/>
+  <img src="images/lokabot_lights.GIF" alt="LokaBot lights" width="800"/>
 </p>
 
 
@@ -73,7 +73,7 @@ Instead of three different libraries, you only need `Loka`.
 
 
 <p align="center">
-  <img src="images/lokabot_motors.GIF" alt="LokaBot motors" width="600"/>
+  <img src="images/lokabot_motors.GIF" alt="LokaBot motors" width="800"/>
 </p>
 
 
