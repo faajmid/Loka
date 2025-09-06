@@ -43,9 +43,9 @@ but also shows good engineering choices for more advanced users.
 Loka is built with a mix of custom 3D printed parts and standard components.  
 The design keeps the part count low while still covering the essentials.
 
-- **CodeCell board** (ESP32-C3 with onboard VCNL4040 light sensor and BNO085 IMU)  
+- **CodeCell board** ESP32-C3 with onboard VCNL4040 light sensor and BNO085 IMU
 - **VL53L7CX time of flight sensor** for 4×4 or 8×8 distance zones  
-- **Two N10 DC motors (140 RPM)** with DRV8833 motor driver  
+- **Two N10 DC motors 140 RPM** with DRV8833 motor driver  
 - **LiPo battery**: 200 mAh tested, 400 mAh recommended for longer runtime  
 - **LED battery indicator module**  
 - **Mini power switch with LED**  
@@ -63,9 +63,9 @@ Instead of three different libraries, you only need `Loka`.
 
 ### Supported
 
-- **IMU (BNO085)**: orientation, gyro, tap detection  
-- **Light sensor (VCNL4040)**: ambient and proximity sensing, auto headlight control  
-- **Time of Flight (VL53L7CX)**: multi-zone ranging, split into Left / Middle / Right  
+- **IMU BNO085**: orientation, gyro, tap detection  
+- **Light sensor VCNL4040**: ambient and proximity sensing, auto headlight control  
+- **Time of Flight VL53L7CX**: multi-zone ranging, split into Left / Middle / Right  
 - **Motors**: simple control API for left and right motors *(coming soon)*
 <br><br>
 <p align="center">
@@ -111,7 +111,7 @@ void loop() {
 Quick demos are included in the `examples/` folder.  
 Here are short versions to get started:
 
-### Time of Flight (VL53L7CX)
+### Time of Flight VL53L7CX
 ```cpp
 #include <Loka.h>
 LokaToF tof;
@@ -131,7 +131,7 @@ void loop() {
 }
 ```
 
-### Light (VCNL4040)
+### Light VCNL4040
 ```cpp
 #include <Loka.h>
 LokaMCU loka;
@@ -149,7 +149,7 @@ void loop() {
 }
 ```
 
-### IMU (BNO085)
+### IMU BNO085
 ```cpp
 #include <Loka.h>
 LokaMCU loka;
@@ -190,12 +190,12 @@ void loop() {
 ## Roadmap
 
 - Loka core library  
-- Time-of-Flight sensor (VL53L7CX)  
-- Light sensor (VCNL4040)  
-- IMU (BNO085)  
-- Motor control (N10 DC motors + DRV8833)  
+- Time-of-Flight sensor VL53L7CX
+- Light sensor VCNL4040
+- IMU BNO085  
+- Motor control N10 DC motors + DRV8833 
 - Assembly guide with 3D files and tire molding  
-- Extra examples (obstacle avoidance, following, IMU actions)
+- Extra examples obstacle avoidance, following, IMU actions
 
 ## Attribution
 
@@ -214,14 +214,12 @@ void loop() {
 ## Acknowledgements
 
 - [Microbots CodeCell](https://github.com/microbotsio/CodeCell)  
-  for both the ESP32-C3 hardware platform and the library style,  
+  for both the CodeCell ESP32-C3 hardware platform and the library style,  
   which inspired the simplified initialization (`Init()`) approach in Loka.
 
-- Special thanks to the open-source community whose work and feedback made this project possible.
 
----
 ## License
-
+---
 This project is licensed under the MIT License.  
 See the [LICENSE](LICENSE) file for details.
 
