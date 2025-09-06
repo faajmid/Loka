@@ -1,7 +1,7 @@
 ## LokaBot
 
 ![LokaBot](images/lokabot.jpg)
-*Concept render generated with AI*
+*AI render*
 
 Loka is designed as a simple but complete robot for learning robotics.  
 It shows how a robot can sense, decide, and act using only a few parts.  
