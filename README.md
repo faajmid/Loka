@@ -197,6 +197,7 @@ void loop() {
 - Assembly guide with 3D files and tire molding  
 - Extra examples (obstacle avoidance, following, IMU actions)
 
+---
 ## Attribution
 
 - **CEVA SH2/SHTP drivers**  
@@ -211,8 +212,6 @@ void loop() {
   [BNO08x Arduino Library](https://github.com/sparkfun/SparkFun_BNO080_Arduino_Library),  
   both released under the MIT License.
 
----
-
 ## Acknowledgements
 
 - [Microbots CodeCell](https://github.com/microbotsio/CodeCell)  
@@ -221,6 +220,7 @@ void loop() {
 
 - Special thanks to the open-source community whose work and feedback made this project possible.
 
+---
 ## License
 
 This project is licensed under the MIT License.  
