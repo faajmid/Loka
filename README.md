@@ -197,7 +197,6 @@ void loop() {
 - Assembly guide with 3D files and tire molding  
 - Extra examples (obstacle avoidance, following, IMU actions)
 
----
 ## Attribution
 
 - **CEVA SH2/SHTP drivers**  
