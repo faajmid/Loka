@@ -7,6 +7,7 @@ It brings advanced robotics concepts such as orientation sensing, multi zone dis
 *AI render*
 
 <img src="images/lokabot_avoidance.GIF" alt="LokaBot Obstacle Avoidance" width="400" align="right"/>
+
 The project also includes the **Loka Library**, which unifies the IMU, light sensor, time of flight sensor, and motor control under one simple API.  
 This removes the need for multiple libraries and makes it easy to try obstacle avoidance, light following, or IMU based actions.
 
