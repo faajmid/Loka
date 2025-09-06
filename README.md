@@ -16,9 +16,9 @@ The design is small, low cost, and easy to build, yet it covers the main topics:
 
 - One VL53L7CX sensor is split into left, middle, and right zones for navigation.  
   This replaces the need for multiple distance sensors.  
-- A custom library (`Loka`) makes all sensors work with simple commands.  
+- A custom library `Loka` makes all sensors work with simple commands.  
   Instead of using three separate libraries, everything is unified.  
-- The body is fully 3D printed and uses **press-fit assembly without screws**,  
+- The body is fully 3D printed and uses **press fit assembly without screws**,  
   making it easy to build even for beginners.  
 
 The goal is to create a robot that is easy for students and hobbyists,  
@@ -74,6 +74,7 @@ Instead of three different libraries, you only need `Loka`.
   <img src="images/lokabot_motors.GIF" alt="LokaBot motors" width="700"/>
 </p>
 <br><br>
+
 ## Core Classes
 
 - `LokaMCU` → IMU and light  
