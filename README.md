@@ -11,7 +11,7 @@ The design is small, low cost, and easy to build, yet it covers the main topics:
   <img src="images/lokabot_avoidance.GIF" alt="LokaBot Obstacle Avoidance" width="700"/>
 </p>
 <br><br>
-### Key Ideas
+## Key Ideas
 
 - One VL53L7CX sensor is split into left, middle, and right zones for navigation.  
   This replaces the need for multiple distance sensors.  
@@ -61,7 +61,7 @@ The Loka library brings all sensors and controls into one simple API.
 It wraps the original SparkFun drivers and makes them easier to use.  
 Instead of three different libraries, you only need `Loka`.
 
-### Supported
+## Supported
 
 - **IMU BNO085**: orientation, gyro, tap detection  
 - **Light sensor VCNL4040**: ambient and proximity sensing, auto headlight control  
@@ -72,13 +72,13 @@ Instead of three different libraries, you only need `Loka`.
   <img src="images/lokabot_motors.GIF" alt="LokaBot motors" width="700"/>
 </p>
 <br><br>
-### Core Classes
+## Core Classes
 
 - `LokaMCU` → IMU and light  
 - `LokaToF` → time of flight distance sensing  
 - `LokaMotors` → motor control  
 
-### Example
+## Example
 
 ```cpp
 #include <Loka.h>
