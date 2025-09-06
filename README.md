@@ -11,6 +11,7 @@ The design is small, low cost, and easy to build, yet it covers the main topics:
   <img src="images/lokabot_avoidance.GIF" alt="LokaBot Obstacle Avoidance" width="700"/>
 </p>
 <br><br>
+
 ## Key Ideas
 
 - One VL53L7CX sensor is split into left, middle, and right zones for navigation.  
