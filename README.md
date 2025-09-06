@@ -1,4 +1,4 @@
-### LokaBot
+# LokaBot
 
 ![LokaBot](images/lokabot.jpg)
 *AI render*
