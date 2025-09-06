@@ -103,6 +103,7 @@ void loop() {
   mcu.Run();                          // update IMU + Light
   tof.Run(10);                        // update ToF at 10 Hz
 
+  // IMU + Light printing
   mcu.PrintIMU();
   mcu.PrintLight();
 
@@ -125,14 +126,15 @@ LokaToF tof;
 
 void setup() {
   Serial.begin(115200);
-  tof.Init(Z16);                    // choose 4×4 or 8×8
-  tof.Left();                       // default groups
+  tof.Init(Z16);                    // choose Z16 for 4×4 or Z64 for 8×8
+  tof.Left();                       // default groups of zones
   tof.Middle();
   tof.Right();
 }
 
 void loop() {
   tof.Run(30);
+  tof.PrintZones();                 // Print zones grid
   tof.PrintZonesAvg();              // L | M | R averages
   delay(100);
 }
