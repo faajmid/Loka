@@ -1,15 +1,20 @@
 ## LokaBot
 
 ![LokaBot](images/lokabot.jpg)
+*Concept render generated with AI*
 
 Loka is designed as a simple but complete robot for learning robotics.  
 It shows how a robot can sense, decide, and act using only a few parts.  
 The design is small, low cost, and easy to build, yet it covers the main topics: sensing, control, and motion.
 
 
+
+
 <p align="center">
   <img src="images/lokabot_avoidance.GIF" alt="LokaBot Obstacle Avoidance" width="500"/>
 </p>
+
+
 
 
 ### Key Ideas
@@ -36,9 +41,13 @@ but also shows good engineering choices for more advanced users.
 - USB-C charging and onboard LiPo battery support
 
 
+
+
 <p align="center">
   <img src="images/lokabot_lights.GIF" alt="LokaBot lights" width="500"/>
 </p>
+
+
 
 
 ## Hardware
@@ -72,9 +81,13 @@ Instead of three different libraries, you only need `Loka`.
 - **Motors**: simple control API for left and right motors *(coming soon)*
 
 
+
+
 <p align="center">
   <img src="images/lokabot_motors.GIF" alt="LokaBot motors" width="500"/>
 </p>
+
+
 
 
 ### Core Classes
