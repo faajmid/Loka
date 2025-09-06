@@ -197,6 +197,30 @@ void loop() {
 - Assembly guide with 3D files and tire molding  
 - Extra examples (obstacle avoidance, following, IMU actions)
 
+## Attribution
+
+- **CEVA SH2/SHTP drivers**  
+  Portions of this code are licensed from CEVA, Inc. and included under the Apache License 2.0.  
+  Copyright (c) CEVA, Inc. and its licensors. All rights reserved.  
+  CEVA and the CEVA logo are trademarks of CEVA, Inc.  
+  For more information, visit [CEVA's website](https://www.ceva-dsp.com/app/motion-sensing/).
+
+- **SparkFun Libraries**  
+  Inspired by SparkFun’s sensor libraries, including the  
+  [VL53L5CX ToF driver](https://github.com/sparkfun/SparkFun_VL53L5CX_Arduino_Library) and  
+  [BNO08x Arduino Library](https://github.com/sparkfun/SparkFun_BNO080_Arduino_Library),  
+  both released under the MIT License.
+
+---
+
+## Acknowledgements
+
+- [Microbots CodeCell](https://github.com/microbotsio/CodeCell)  
+  for both the ESP32-C3 hardware platform and the library style,  
+  which inspired the simplified initialization (`Init()`) approach in Loka.
+
+- Special thanks to the open-source community whose work and feedback made this project possible.
+
 ## License
 
 This project is licensed under the MIT License.  
