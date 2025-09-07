@@ -1,11 +1,9 @@
 #include "LokaMCU.h"
 #include <math.h>
-#include "mcu/sh2.h"   // IMU event IDs used inside imuPoll_()
+#include "mcu/sh2.h"  
 
-// ------- Tunables / constants -------
-static constexpr uint16_t VCNL_POLL_MS = 50;  // ~20 Hz light poll
+static constexpr uint16_t VCNL_POLL_MS = 50; 
 
-// Globals for beginners (declared as extern in header)
 float     r = 0, p = 0, y = 0;
 float     gx = 0, gy = 0, gz = 0;
 uint16_t  prox = 0, amb = 0;
@@ -42,13 +40,12 @@ void LokaMCU::Run(uint8_t hz) {
   _hz = constrain(hz, (uint8_t)1, (uint8_t)100);
   const uint32_t period_ms = 1000UL / _hz;
 
-  // block until it's time for the next tick
   while (millis() - _last_tick_ms < period_ms) {
-    delay(1); // tiny sleep to avoid busy-waiting
+    delay(1); 
   }
   _last_tick_ms = millis();
 
-  // --- reset selection logs each tick ---
+  // reset selection logs each tick
   _rotCount = _gyrCount = _lightCount = 0;
   _tapQueriedThisTick = false;
   _tapWasTrue = false;
@@ -56,7 +53,6 @@ void LokaMCU::Run(uint8_t hz) {
   // poll sensors on the tick
   if (_imu_ok) imuPoll_();
 
-  // light sensor at ~20 Hz (every VCNL_POLL_MS), independent of hz
   const uint32_t now = millis();
   if (_light_en && (now - _last_light_ms >= VCNL_POLL_MS)) {
     _last_light_ms = now;
@@ -90,18 +86,16 @@ void LokaMCU::Headlight(bool on) {
 
 void LokaMCU::PwrState(PowerState s) {
   _pwr_state = s;
-  // No-op here; reserved for future power UI.
 }
 
-// ----- Public getters (legacy) route through flexible versions so printers reflect them -----
 void LokaMCU::Rotation(float &rOut, float &pOut, float &yOut) { Rot(rOut, pOut, yOut); }
 void LokaMCU::Gyro(float &gxOut, float &gyOut, float &gzOut)  { Gyro(gxOut); Gyro(gyOut); Gyro(gzOut); }
 
 bool LokaMCU::TapRead() {
   const bool t = _tap_flag;
   _tap_flag = false;
-  tap = t;            // update beginner global
-  // per-tick flags for PrintIMU
+  tap = t;            
+
   _tapQueriedThisTick = true;
   if (t) _tapWasTrue = true;
   return t;
@@ -109,20 +103,14 @@ bool LokaMCU::TapRead() {
 void LokaMCU::TapRead(bool &tapOut) {
   tapOut = _tap_flag;
   _tap_flag = false;
-  tap = tapOut;       // update beginner global
-  // per-tick flags for PrintIMU
+  tap = tapOut;       
   _tapQueriedThisTick = true;
   if (tapOut) _tapWasTrue = true;
 }
 
-// ----- Light legacy (3-arg stays exact; 2-arg becomes orderless via flexible core) -----
 void LokaMCU::Light(uint16_t &p, uint16_t &a, uint16_t &w) { p=_prox; a=_amb; w=_white; }
 void LokaMCU::Light(uint16_t &p, uint16_t &a)              { Light(p); Light(a); }
 
-// ================== ORDERLESS FLEX CALLS (ROT / GYRO / LIGHT) ==================
-//
-// We append tokens to per-tick order logs so the printers reflect the exact call order.
-// Dedup ensures repeated axes don't print twice.
 
 // Rot(): fills r,p,y in that order and prints as r,p,y
 void LokaMCU::Rot() {
@@ -161,7 +149,6 @@ void LokaMCU::Light(uint16_t &a) {
   else { a = _amb; amb = _amb; _pushUnique(_lightOrder, _lightCount, 'a', 2); }
 }
 
-// ================== PRINTERS (reflect exactly what you requested, same order) ==================
 
 void LokaMCU::PrintIMU(bool withLabels) {
   bool printedSomething = false;
@@ -291,7 +278,6 @@ void LokaMCU::imuPoll_() {
 bool LokaMCU::vcnlInit_() {
   Wire.beginTransmission(VCNL4040_I2C_ADDR);
   if (Wire.endTransmission() != 0) return false;
-  // These defaults give strong proximity + live ambient
   if (!vcnlWriteU16_(VCNL4040_ALS_CONF,    0x0000)) return false;
   if (!vcnlWriteU16_(VCNL4040_PS_CONF1_2,  0x080E)) return false;
   if (!vcnlWriteU16_(VCNL4040_PS_CONF3_MS, 0x4710)) return false;
@@ -323,7 +309,6 @@ void LokaMCU::vcnlPoll_() {
   if (vcnlReadU16_(VCNL4040_WHITE,   v)) _white = v;
 }
 
-// ----- math helpers -----
 void LokaMCU::quatMul_(float aw,float ax,float ay,float az,
                        float bw,float bx,float by,float bz,
                        float &rw,float &rx,float &ry,float &rz) {
