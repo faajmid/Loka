@@ -18,11 +18,11 @@ bool LokaToF::Init(LokaToFRes res) {
   if (_res == Z16) _sensor.setResolution(16);
   else             _sensor.setResolution(64);
 
-  _rangeHz = 15;                       // Z64 max ~15 Hz (Z16 can go up to ~30 Hz)
+  _rangeHz = 15;
   _sensor.setRangingFrequency(_rangeHz);
   _sensor.startRanging();
 
-  setDefaultGroups_();                 // physical defaults
+  setDefaultGroups_();
 
   _lastTickMs = millis();
   return true;
@@ -51,7 +51,6 @@ void LokaToF::Run(uint8_t hz) {
   }
 }
 
-// ---------- Group setup ----------
 void LokaToF::Left()   { defaultLeft_(); }
 void LokaToF::Middle() { defaultMiddle_(); }
 void LokaToF::Right()  { defaultRight_(); }
@@ -77,8 +76,6 @@ void LokaToF::setGroupFromArray_(const uint8_t* src, uint8_t n, uint8_t* dst, ui
   }
 }
 
-// ---------- Physical defaults (match your Loka orientation) ----------
-// Printing shows top row first with 0 at TOP-RIGHT.
 // Z16 default groups:
 //   LEFT  = {3,7,11,15}      (leftmost column)
 //   RIGHT = {0,4,8,12}       (rightmost column)
@@ -95,7 +92,7 @@ void LokaToF::defaultLeft_() {
     const uint8_t L[] = {3,7,11,15};
     for (uint8_t i=0;i<4;i++) _leftIdx[_leftCount++] = L[i];
   } else {
-    for (uint8_t row=0; row<8; ++row) {          // cols 7 & 6
+    for (uint8_t row=0; row<8; ++row) {
       _leftIdx[_leftCount++] = row*8 + 7;
       _leftIdx[_leftCount++] = row*8 + 6;
     }
@@ -108,7 +105,7 @@ void LokaToF::defaultMiddle_() {
     const uint8_t M[] = {1,2,5,6,9,10,13,14};
     for (uint8_t i=0;i<8;i++) _midIdx[_midCount++] = M[i];
   } else {
-    for (uint8_t row=0; row<8; ++row) {          // cols 2..5
+    for (uint8_t row=0; row<8; ++row) {
       _midIdx[_midCount++] = row*8 + 2;
       _midIdx[_midCount++] = row*8 + 3;
       _midIdx[_midCount++] = row*8 + 4;
@@ -123,7 +120,7 @@ void LokaToF::defaultRight_() {
     const uint8_t R[] = {0,4,8,12};
     for (uint8_t i=0;i<4;i++) _rightIdx[_rightCount++] = R[i];
   } else {
-    for (uint8_t row=0; row<8; ++row) {          // cols 0 & 1
+    for (uint8_t row=0; row<8; ++row) {
       _rightIdx[_rightCount++] = row*8 + 0;
       _rightIdx[_rightCount++] = row*8 + 1;
     }
@@ -136,7 +133,6 @@ void LokaToF::setDefaultGroups_() {
   defaultRight_();
 }
 
-// ---------- Values ----------
 int LokaToF::avgOf_(const uint8_t* idx, uint8_t count) {
   if (count == 0) return -1;
   long sum = 0;
@@ -165,9 +161,7 @@ int LokaToF::Error() {
   return L - R;
 }
 
-// ---------- Mask building & printing ----------
 void LokaToF::buildMask_() {
-  // If a side has no zones set, apply physical defaults for that side only.
   if (_leftCount  == 0) defaultLeft_();
   if (_midCount   == 0) defaultMiddle_();
   if (_rightCount == 0) defaultRight_();
@@ -178,23 +172,22 @@ void LokaToF::buildMask_() {
   for (uint8_t i=0; i<_rightCount; ++i)  _mask[_rightIdx[i]] = true;
 }
 
-// Print TOP→BOTTOM, LEFT→RIGHT, with zone 0 at TOP-RIGHT.
-// Formula: display (row=r, col=c) maps to index idx = r*w + (w-1 - c)
+
 void LokaToF::printGrid_() {
   const uint8_t w = gridW_();
   const uint8_t n = zoneCount_();
   const uint8_t h = n / w;
 
-  for (uint8_t r = 0; r < h; ++r) {            // r = 0 .. top row
-    for (uint8_t c = 0; c < w; ++c) {          // c = 0 .. left -> right
+  for (uint8_t r = 0; r < h; ++r) {
+    for (uint8_t c = 0; c < w; ++c) {
       const uint8_t idx = r * w + (w - 1 - c);
 
       if (!_mask[idx]) {
-        Serial.print(F("."));                  // not selected
+        Serial.print(F("."));
       } else {
         const int v = _distances[idx];
-        if (v <= 0) Serial.print(F("-"));      // selected but no valid reading
-        else        Serial.print(v);           // selected & valid
+        if (v <= 0) Serial.print(F("-"));
+        else        Serial.print(v);
       }
 
       if (c < w - 1) Serial.print('\t');
@@ -203,7 +196,6 @@ void LokaToF::printGrid_() {
   }
 }
 
-// --- NEW: split printers ---
 void LokaToF::PrintZones() {
   buildMask_();
   printGrid_();           // grid only
