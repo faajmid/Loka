@@ -3,24 +3,24 @@
 LokaBot is an open source palm sized autonomous robot powered by ESP32 and programmed with the Arduino IDE.  
 It brings advanced robotics concepts such as orientation sensing, multi zone distance mapping, and autonomous navigation into a very small and affordable platform.
 
-
 <br>
 <p align="center">
   <img src="images/lokabot.jpg" alt="lokabot" width="500"/>
 </p>
 <br>
 
-
 The project also includes the **Loka Library**, which unifies the IMU, light sensor, time of flight sensor, and motor control under one simple API.  
 This removes the need for multiple libraries and makes it easy to try obstacle avoidance, light following, or IMU based actions.
+
+The goal is to make robotics approachable through a compact and easy to use robot.  
+LokaBot is built to support education, hobby projects, and early research by providing an affordable hands on platform.  
+By combining sensing, decision making, and motion in a tiny robot, Loka hopes to bring STEM learning to more people and inspire newcomers of all ages to explore robotics.
+
 <br><br>
 <p align="center">
   <img src="images/lokabot_avoidance.GIF" alt="LokaBot avoidance" width="500"/>
 </p>
 <br><br>
-The goal is to make robotics approachable through a compact and easy to use robot.  
-LokaBot is built to support education, hobby projects, and early research by providing an affordable hands on platform.  
-By combining sensing, decision making, and motion in a tiny robot, Loka hopes to bring STEM learning to more people and inspire newcomers of all ages to explore robotics.
 
 ## Key Ideas
 
@@ -45,6 +45,7 @@ but also shows good engineering choices for more advanced users.
 - Press-fit slots for motor driver and ToF sensor (no screws needed)  
 - DIY silicone tires for better grip  
 - USB-C charging and onboard LiPo battery support
+  
 <br><br>
 <p align="center">
   <img src="images/lokabot_lights.GIF" alt="LokaBot lights" width="500"/>
@@ -80,6 +81,7 @@ Instead of three different libraries, you only need `Loka`.
 - **Light sensor VCNL4040**: ambient and proximity sensing, auto headlight control  
 - **Time of Flight VL53L7CX**: multi-zone ranging, split into Left / Middle / Right  
 - **Motors**: simple control API for left and right motors *(coming soon)*
+  
 <br><br>
 <p align="center">
   <img src="images/lokabot_motors.GIF" alt="LokaBot motors" width="500"/>
