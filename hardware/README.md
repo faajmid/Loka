@@ -25,7 +25,7 @@ Mix equal parts A and B silicone (1:1 ratio).
 For each pair of tires, prepare ~12g of A and ~12g of B.  
 
 ### Steps
-1. Measure parts A and B.  
+1. Measure parts ~12g of A and ~12g of B.  
    ![Mixing silicone](images/01.jpg)
 
 2. Fill syringe and pour into 3D printed hub.  
