@@ -14,7 +14,7 @@ This folder contains all 3D printable parts and hardware details for the LokaBot
 | Battery indicator module | 1S LED indicator | 1 | Board size ~**5×9.5 mm** |
 | Caster ball | Small perfume **roller ball** 10 mm | 1 | Front support |
 | Wires | **30 AWG** flexible silicone wire (5 colors) | 1 | Keep motor leads short |
-| 3D parts & CAD | Body, wheel hubs, tire mold | – | See [`3D`](3D) folder — includes `.3mf` files for printing and [`lokabot.step`](3D/lokabot.step) for editing |
+| 3D parts & CAD | Body, wheel hubs, tire mold | – | See [`3D`](3D) folder, includes `.3mf` files for printing and [`LokaBot.step`](3D/LokaBot.step) for editing |
 | Silicone rubber | **DoYB Mold Making A30, 1:1 mix** | 1 | For casting tires; syringe fill recommended |
 
 
