@@ -6,7 +6,7 @@ This folder contains all 3D printable parts for the LokaBot.
 
 | Part | Spec / Model | Qty | Notes |
 |---|---|---:|---|
-| MCU board | CodeCell ESP32-C3 w/ VCNL4040 + BNO085 | 1 | USB-C, onboard sensors |
+| MCU board | CodeCell ESP32-C3 VCNL4040 + BNO085 | 1 | USB-C, onboard sensors |
 | ToF sensor | VL53L7CX breakout | 1 | 6.4x3.0x1.6 mm
 | Motors | micro DC N10 298 RPM 3V | 2 | 4.4mm D-shaft  |
 | Motor driver | DRV8833 | 1 | Dual H-bridge |
