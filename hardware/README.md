@@ -19,7 +19,7 @@ This folder contains all 3D printable parts and hardware details for the LokaBot
 
 
 
-## Parts
+## 3D Parts
 - **Body** – main chassis designed for press-fit assembly (no screws needed).  
 - **Wheel Hub** – 3D printed hubs for N10 motors (3 mm D-shaft).  
 - **Tire Template** – mold for casting silicone or rubber tires.
