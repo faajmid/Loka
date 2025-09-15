@@ -54,20 +54,10 @@ but also shows good engineering choices for more advanced users.
 
 ## Hardware
 
-Loka is built with a mix of custom 3D printed parts and standard components.  
-The design keeps the part count low while still covering the essentials.
+LokaBot combines custom 3D printed parts with low cost standard components.  
+The design is compact, screw free, and uses press fit assembly for easy building.
 
-- **CodeCell board** ESP32-C3 with onboard VCNL4040 light sensor and BNO085 IMU
-- **VL53L7CX time of flight sensor** for 4×4 or 8×8 distance zones  
-- **Two N10 DC motors 140 RPM** with DRV8833 motor driver  
-- **LiPo battery**: 200 mAh tested, 400 mAh recommended for longer runtime  
-- **LED battery indicator module**  
-- **Mini power switch with LED**  
-- **One piece 3D printed body** and **custom wheels**  
-- **DIY silicone tires** molded to fit the printed wheels  
-- **Front caster ball** made from a small perfume roller ball
-
-Detailed sourcing links are provided in the `hardware/` folder.
+Full BOM, 3D files, wiring diagram, and assembly guide: [hardware/README.md](hardware/README.md)
 
 ## Software
 
