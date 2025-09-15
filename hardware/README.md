@@ -3,7 +3,6 @@
 This folder contains all 3D printable parts and hardware details for the LokaBot.
 
 ## Bill of Materials (BOM)
-
 | Part | Spec / Model | Qty | Notes |
 |---|---|---:|---|
 | MCU board | CodeCell ESP32-C3 with VCNL4040 + BNO085 | 1 | USB-C, onboard sensors |
@@ -16,16 +15,18 @@ This folder contains all 3D printable parts and hardware details for the LokaBot
 | Caster ball | Small perfume **roller ball** 10 mm | 1 | Front support |
 | Wires | **30 AWG** flexible silicone wire (5 colors) | 1 | Keep motor leads short |
 | 3D parts | Body, wheel hubs, tire mold | – | See [`3D/`](3D) folder (print body **with supports**) |
-| Silicone rubber | **RTV-2 platinum-cure, Shore A 30, 1:1 mix** | 1 | For casting tires; syringe fill recommended |
+| CAD file | [`3D/lokabot.step`](lokabot.step) | 1 | Editable model |
+| Silicone rubber | **DoYB Mold Making A30, 1:1 mix** | 1 | For casting tires; syringe fill recommended |
 
----
+
 
 ## Parts
 - **Body** – main chassis designed for press-fit assembly (no screws needed).  
 - **Wheel Hub** – 3D printed hubs for N10 motors (3 mm D-shaft).  
-- **Tire Template** – mold for casting silicone or rubber tires.  
+- **Tire Template** – mold for casting silicone or rubber tires.
+- **STEP file** – included for easy editing or remixing.
+ 
 
----
 
 ## Printing Notes
 - Recommended material: PLA or PLA-CF for body and hubs.  
@@ -35,10 +36,16 @@ This folder contains all 3D printable parts and hardware details for the LokaBot
 
 Example slicer view:  
    <p align="left">
-  <img src="images/Slicer_preview.jpg" alt="01" width="500"/>
+  <img src="images/Slicer_preview.png" alt="01" width="500"/>
 </p>
 
----
+
+
+## Wiring Diagram
+<p align="center">
+  <img src="images/wiring.png" alt="Wiring diagram for LokaBot" width="650"/>
+</p>
+
 
 ## Assembly
 1. Print all `.3mf` files at 0.2 mm layer height (or finer).  
@@ -46,10 +53,9 @@ Example slicer view:
 3. Use the tire mold with silicone (1:1 ratio) to create soft rubber tires.  
 4. Attach the caster ball in the front slot.  
 
----
+
 
 ## Casting Silicone Tires
-
 Mix equal parts A and B silicone (1:1 ratio).  
 For each pair of tires, prepare ~12 g of A and ~12 g of B.  
 
