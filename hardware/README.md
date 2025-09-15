@@ -16,7 +16,7 @@ This folder contains all 3D printable parts for the LokaBot.
 | Caster ball | Small perfume **roller ball** | 1 | Front support |
 | Wires | **30 AWG** 5 Colors Flexible Silicone Wire | 1 | Keep motor leads short |
 | 3D parts | Body, wheel hubs, tire mold | – | In `3D/` (print body **with supports**) |
-| **Silicone rubber | **RTV-2 platinum cure, Shore A 30, 1:1 | 1 | For casting tires; syringe fill recommended |
+| Silicone rubber | **RTV-2 platinum cure, Shore A 30, 1:1 | 1 | For casting tires; syringe fill recommended |
 
 ## Parts
 - **Body** – main chassis designed for press fit assembly (no screws needed).
