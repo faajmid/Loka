@@ -17,16 +17,6 @@ This folder contains all 3D printable parts and hardware details for the LokaBot
 | 3D parts & CAD | Body, wheel hubs, tire mold | – | See [`3D`](3D) folder, includes `.3mf` files for printing and [`LokaBot.step`](3D/LokaBot.step) for editing |
 | Silicone rubber | **DoYB Mold Making A30, 1:1 mix** | 1 | For casting tires; syringe fill recommended |
 
-
-
-## 3D Parts
-- **Body** – main chassis designed for press-fit assembly (no screws needed).  
-- **Wheel Hub** – 3D printed hubs for N10 motors (3 mm D-shaft).  
-- **Tire Template** – mold for casting silicone or rubber tires.
-- **STEP file** – included for easy editing or remixing.
- 
-
-
 ## Printing Notes
 - Recommended material: PLA or PLA-CF for body and hubs.  
 - Tire mold can be printed with standard PLA.  
@@ -38,46 +28,43 @@ Example slicer view:
   <img src="images/Slicer_preview.png" alt="01" width="500"/>
 </p>
 
-
-
 ## Wiring Diagram
 <p align="center">
   <img src="images/wiring.png" alt="Wiring diagram for LokaBot" width="650"/>
 </p>
 
-
 ## Assembly
+> Before assembly: Trim the screw hole edges of the VL53L7CX breakout board.  
+> This creates sharp edges so the board press-fits perfectly into the body slot.
+
 1. Print all `.3mf` files at 0.2 mm layer height (or finer).  
-2. Press-fit the motors, board, and sensor into the body.  
-3. Use the tire mold with silicone (1:1 ratio) to create soft rubber tires.  
+2. Press fit the motors, board, and sensor into the body.  
+3. Use the tire mold with silicone to create soft rubber tires.  
 4. Attach the caster ball in the front slot.  
-
-
 
 ## Casting Silicone Tires
 Mix equal parts A and B silicone (1:1 ratio).  
 For each pair of tires, prepare ~12 g of A and ~12 g of B.  
 
 ### Steps
-1. Measure parts ~12 g of A and ~12 g of B.  
+1. Measure ~12 g of each part and mix thoroughly.  
    <p align="left">
   <img src="images/01.jpg" alt="01" width="500"/>
 </p>
 
+2. Fill syringe and pour into 3D printed hub, Let cure for 4 hours.  
 
-3. Fill syringe and pour into 3D printed hub.  
-   <p align="left">
-  <img src="images/02.jpg" alt="02" width="500"/>
-</p>
-
-
-4. Let cure for 4 hours.  
    <p align="left">
   <img src="images/03.jpg" alt="03" width="500"/>
 </p>
 
+4. Remove the tire by squeezing the mold to break it open (designed for easy release).  
+   <p align="center">
+     <img src="images/remove.gif" alt="Removing tire from mold" width="500"/>
+   </p>
 
-5. Final result – soft wheels with excellent grip.  
+### Final Result
+Soft wheels with excellent grip.  
      <p align="left">
   <img src="images/04.jpg" alt="04" width="500"/>
 </p>  
