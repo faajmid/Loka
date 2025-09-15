@@ -34,7 +34,9 @@ This folder contains all 3D printable parts and hardware details for the LokaBot
 - Tree supports are preferred.  
 
 Example slicer view:  
-![Slicer preview](images/slicer.jpg)
+   <p align="left">
+  <img src="images/Slicer_preview.jpg" alt="01" width="500"/>
+</p>
 
 ---
 
