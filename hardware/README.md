@@ -6,17 +6,17 @@ This folder contains all 3D printable parts for the LokaBot.
 
 | Part | Spec / Model | Qty | Notes |
 |---|---|---:|---|
-| MCU board | CodeCell ESP32-C3 VCNL4040 + BNO085 | 1 | USB-C, onboard sensors |
-| ToF sensor | VL53L7CX breakout | 1 | Board size ize 6.4x3.0x1.6mm |
-| Motors | micro DC N10 298 RPM 3V | 2 | 4.4mm D-shaft  |
+| MCU board | CodeCell ESP32-C3 with VCNL4040 + BNO085 | 1 | USB-C, onboard sensors |
+| ToF sensor | VL53L7CX breakout | 1 | Dimensions 6.4x3.0x1.6 mm |
+| Motors | N10 DC **6 V** ~200–300 RPM | 2 | **3 mm D-shaft** (matches hub) |
 | Motor driver | DRV8833 | 1 | Dual H-bridge |
-| Battery | LiPo 1S 3.7V 200–400 mAh | 1 | Not more than 20x15x8mm |
-| Switch | Mini Slide toggle switch SS12D00G3 2mm | 1 | Panel mount | 
-| Battery indicator Module | 1S LED bar/indicator | 1 | Size 5x9.5mm |
+| Battery | LiPo 1S 3.7 V **200–400 mAh** | 1 | Choose size that fits body cavity |
+| Switch | Mini **slide** switch (SS12D00G3) | 1 | Panel mount |
+| Battery indicator module | 1S LED bar/indicator | 1 | Size 5x9.5 mm |
 | Caster ball | Small perfume **roller ball** | 1 | Front support |
-| Wires | 30AWG | As needed |
+| Wires | **30 AWG** 5 Colors Flexible Silicone Wire | 1 | Keep motor leads short |
 | 3D parts | Body, wheel hubs, tire mold | – | In `3D/` (print body **with supports**) |
-
+| **Silicone rubber | **RTV-2 platinum cure, Shore A 30, 1:1 | 1 | For casting tires; syringe fill recommended |
 
 ## Parts
 - **Body** – main chassis designed for press fit assembly (no screws needed).
