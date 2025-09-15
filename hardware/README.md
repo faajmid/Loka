@@ -19,6 +19,24 @@ This folder contains all 3D printable parts for the LokaBot.
 3. Use the tire mold with silicone (1:1 ratio) to create soft rubber tires.
 4. Attach the castor ball in the front slot.
 
-## Visual Guide
+## Casting Silicone Tires
+
+Mix equal parts A and B silicone (1:1 ratio).  
+For each pair of tires, prepare ~12g of A and ~12g of B.  
+
+### Steps
+1. Measure parts A and B.  
+   ![Mixing silicone](images/01.jpg)
+
+2. Fill syringe and pour into 3D printed hub.  
+   ![Pouring silicone](images/02.jpg)
+
+3. Let cure for 4 hours.  
+   ![Curing tires](images/03.jpg)
+
+4. Final result – soft wheels with excellent grip.  
+   ![Finished wheels](images/04.jpg)
+   ![Finished wheels](images/05.jpg)
+
 
 
