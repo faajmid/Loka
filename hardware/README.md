@@ -4,14 +4,14 @@ This folder contains all 3D printable parts for the LokaBot.
 
 ## Parts
 - **Body** – main chassis designed for press fit assembly (no screws needed).
-- **Wheel Hub** – 3D printed hubs for N10 motors.
+- **Wheel Hub** – 3D printed hubs for N10 motors (D Shaft).
 - **Tire Template** – mold for casting silicone or rubber tires.
 
 ## Printing Notes
 - Recommended material: PLA or PLA-CF for body and hubs.  
 - Tire mold can be printed with standard PLA.  
 - Print all parts **as-is**, with support enabled for the body.  
-- Tree supports are preferred for best results.  
+- Tree supports are preferred.  
 
 Example slicer view:  
 ![Slicer preview](images/slicer.jpg)
