@@ -6,16 +6,19 @@ This folder contains all 3D printable parts for the LokaBot.
 - **Body** – main chassis designed for press fit assembly (no screws needed).
 - **Wheel Hub** – 3D printed hubs for N10 motors.
 - **Tire Template** – mold for casting silicone or rubber tires.
-- **Optional**: Castor ball holder and small accessories.
 
 ## Printing Notes
-- Recommended material: PLA or PLA-CF for body and hubs.
-- Tire mold can be printed with standard PLA.
-- Wheels.
+- Recommended material: PLA or PLA-CF for body and hubs.  
+- Tire mold can be printed with standard PLA.  
+- Print all parts **as-is**, with support enabled for the body.  
+- Tree supports are preferred for best results.  
+
+Example slicer view:  
+![Slicer preview](images/slicer.jpg)
 
 ## Assembly
-1. Print all STL files at 0.2 mm layer height (or finer).
-2. Press-fit the motors, board, and sensor into the body.
+1. Print all 3mf files at 0.2 mm layer height (or finer).
+2. Press fit the motors, board, and sensor into the body.
 3. Use the tire mold with silicone (1:1 ratio) to create soft rubber tires.
 4. Attach the castor ball in the front slot.
 
@@ -35,8 +38,5 @@ For each pair of tires, prepare ~12g of A and ~12g of B.
    ![Curing tires](images/03.jpg)
 
 4. Final result – soft wheels with excellent grip.  
-   ![Finished wheels](images/04.jpg)
+   ![Finished wheels](images/04.jpg)  
    ![Finished wheels](images/05.jpg)
-
-
-
