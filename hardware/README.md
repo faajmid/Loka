@@ -47,21 +47,20 @@ Mix equal parts A and B silicone (1:1 ratio).
 For each pair of tires, prepare ~12 g of A and ~12 g of B.  
 
 ### Steps
-1. Measure ~12 g of each part and mix thoroughly.  
+1. Measure ~12 g of each part, mix thoroughly, and fill syringe.
    <p align="left">
   <img src="images/01.jpg" alt="01" width="500"/>
 </p>
 
-2. Fill syringe and pour into 3D printed hub, Let cure for 4 hours.  
+2. Pour into the 3D printed hub and let cure for 4 hours.   
 
    <p align="left">
   <img src="images/03.jpg" alt="03" width="500"/>
 </p>
 
-4. Remove the tire by squeezing the mold to break it open (designed for easy release).  
-   <p align="center">
-     <img src="images/remove.gif" alt="Removing tire from mold" width="500"/>
-   </p>
+
+> **Note:** Remove the tire by squeezing the mold to break it open *(designed for easy release)*.  
+
 
 ### Final Result
 Soft wheels with excellent grip.  
