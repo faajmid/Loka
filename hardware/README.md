@@ -29,7 +29,7 @@ Example slicer view:
 </p>
 
 ## Wiring Diagram
-<p align="center">
+<p align="left">
   <img src="images/Digram.png" alt="Wiring diagram for LokaBot" width="650"/>
 </p>
 
