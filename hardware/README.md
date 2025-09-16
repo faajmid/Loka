@@ -37,7 +37,7 @@ Example slicer view:
 > Before assembly: Trim the screw hole edges of the VL53L7CX breakout board.  
 > This creates sharp edges so the board press-fits perfectly into the body slot.
 
-1. Print all `.3mf` files at 0.2 mm layer height (or finer).  
+1. Print all `3mf` files at 0.2 mm layer height (or finer).  
 2. Press fit the motors, board, and sensor into the body.  
 3. Use the tire mold with silicone to create soft rubber tires.  
 4. Attach the caster ball in the front slot.  
