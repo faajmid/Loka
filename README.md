@@ -97,7 +97,6 @@ Here are short versions to get started:
 
 #include <LokaBot.h>
 
-// Motor pins (use PWM-capable pins on your board)
 #define In1Pin1 2
 #define In1Pin2 3
 #define In2Pin1 5
@@ -111,8 +110,7 @@ LokaMotor M2(In2Pin1, In2Pin2);
 void setup() {
   Serial.begin(115200);
 
-  // Enable IMU (rotation + gyro + tap) and Light
-  mcu.Init(LIGHT + ROT + GYR + TAP);
+  mcu.Init(LIGHT + ROT + GYR + TAP); // enable IMU + Light
 
   // ToF: choose one
   tof.Init(Z16);               // 4×4 (default ~30 Hz)
@@ -125,16 +123,24 @@ void setup() {
 }
 
 void loop() {
-  // Update sensors
-  mcu.Run(25);                 // IMU + Light update
-  tof.PrintZones();            // auto-fetches when a new frame is ready
+  // Update IMU/Light internal state
+  mcu.Run(25);
 
-  // Print readings
+  // Fetch latest values so Print* shows fresh data
+  mcu.Rot();
+  mcu.Gyro();
+  mcu.Light(amb);
+
+  // ToF grid (auto-fetches when a new frame is ready)
+  tof.PrintZones();
+
+  // Print IMU + Light
   mcu.PrintIMU();
   mcu.PrintLight();
 
   delay(100);
 }
+
 ```
 
 ### Motors Control
