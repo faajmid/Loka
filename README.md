@@ -24,8 +24,8 @@ By combining sensing, decision making, and motion in a tiny robot, Loka hopes to
 
 ## Key Ideas
 
-- One VL53L7CX sensor is split into left, middle, and right zones for navigation.  
-  This replaces the need for multiple distance sensors.  
+- A single VL53L7CX provides a full 4×4 or 8×8 distance map.  
+  You can print all zones, or choose specific zone to use.    
 - A custom library `Loka` makes all sensors work with simple commands.  
   Instead of using three separate libraries, everything is unified.  
 - The body is fully 3D printed and uses **press fit assembly without screws**,  
@@ -40,7 +40,7 @@ but also shows good engineering choices for more advanced users.
 - Zone based obstacle avoidance with VL53L7CX  
 - Ambient light and proximity sensing with VCNL4040
 - Orientation, gyro, and tap detection with BNO085 IMU  
-- Simple motor control API for left and right motors (coming soon)  
+- Simple motor control for DC motors  
 - One piece 3D printed body and custom wheels  
 - Press-fit slots for motor driver and ToF sensor (no screws needed)  
 - DIY silicone tires for better grip  
@@ -61,7 +61,7 @@ Full BOM, 3D files, wiring diagram, and assembly guide: [hardware/README.md](har
 
 ## Software
 
-The Loka library brings all sensors and controls into one simple API.  
+The Loka library brings all sensors and controls into one simple set of functions.
 It wraps the original SparkFun drivers and makes them easier to use.  
 Instead of three different libraries, you only need `Loka`.
 
@@ -69,8 +69,8 @@ Instead of three different libraries, you only need `Loka`.
 
 - **IMU BNO085**: orientation, gyro, tap detection  
 - **Light sensor VCNL4040**: ambient and proximity sensing, auto headlight control  
-- **Time of Flight VL53L7CX**: multi-zone ranging, split into Left / Middle / Right  
-- **Motors**: simple control API for left and right motors *(coming soon)*
+- **Time of Flight VL53L7CX**: multi-zone ranging (Z16 or Z64) with Datasheet zone layout; select any zones to print  
+- **Motors**: simple DC motor control with speed and direction
   
 <br><br>
 <p align="center">
@@ -94,23 +94,34 @@ LokaToF tof;
 
 void setup() {
   Serial.begin(115200);
-  mcu.Init(LIGHT + ROT + GYR + TAP);  // enable IMU + Light
-  tof.Init(Z16);                      // ToF in 4×4 mode
+
+  // IMU + Light
+  mcu.Init(LIGHT + ROT + GYR + TAP);
+
+  // ToF: choose one
+  tof.Init(Z16);     // 4×4 (default ~30 Hz)
+  // tof.Init(Z64);  // 8×8 (default ~15 Hz)
+
+  // Print all zones by default
+  tof.Zones();
 }
 
 void loop() {
-  mcu.Run();                          // update IMU + Light
-  tof.Run(10);                        // update ToF at 10 Hz
+  mcu.Run();         // update IMU + Light
+
+  // ToF: print grid (SparkFun-style layout)
+  tof.PrintZones();
+
+  // Optional: set a fixed rate
+  // tof.Run(30);
 
   // IMU + Light printing
   mcu.PrintIMU();
   mcu.PrintLight();
 
-  // ToF printing
-  tof.PrintZones();                   // full grid
-  tof.PrintZonesAvg();                // averages: Left | Middle | Right
   delay(100);
 }
+
 ```
 
 ## Examples
@@ -118,23 +129,60 @@ void loop() {
 Quick demos are included in the `examples/` folder.  
 Here are short versions to get started:
 
+### Motors — LokaMotors
+```cpp
+#include <LokaMotors.h>
+
+#define In1Pin1 2
+#define In1Pin2 3
+#define In2Pin1 5
+#define In2Pin2 7
+
+LokaMotor M1(In1Pin1, In1Pin2);
+LokaMotor M2(In2Pin1, In2Pin2);
+
+void setup() {
+  M1.Init();
+  M2.Init();
+}
+
+void loop() {
+  delay(3000);
+  M1.Ctrl(70);     // forward 70%
+  M2.Ctrl(-80);    // backward 80%
+
+  delay(3000);
+  M1.Ctrl(0);      // stop
+  M2.Ctrl(100);    // forward 100%
+}
+```
+
 ### Time of Flight VL53L7CX
 ```cpp
 #include <Loka.h>
+
 LokaToF tof;
 
 void setup() {
   Serial.begin(115200);
-  tof.Init(Z16);                    // choose Z16 for 4×4 or Z64 for 8×8
-  tof.Left();                       // default groups of zones
-  tof.Middle();
-  tof.Right();
+
+  // Choose one:
+  tof.Init(Z16);     // 4×4 (default ~30 Hz)
+  // tof.Init(Z64);  // 8×8 (default ~15 Hz)
+
+  // Print all zones
+  tof.Zones();
+
+  // Or select specific zones:
+  // tof.Zones(12, 13, 14, 15);                // top row (Z16)
+  // tof.Zones(56, 57, 58, 59, 60, 61, 62, 63); // top row (Z64)
 }
 
 void loop() {
-  tof.Run(30);
-  tof.PrintZones();                 // Print zones grid
-  tof.PrintZonesAvg();              // L | M | R averages
+  // Optional: override default rate
+  // tof.Run(30);
+
+  tof.PrintZones();
   delay(100);
 }
 ```
