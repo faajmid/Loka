@@ -86,62 +86,6 @@ Instead of three different libraries, you only need `Loka`.
 ## Examples
 
 Quick demos are included in the `examples/` folder.  
-Here are short versions to get started:
-```cpp
-/*
-  Loka Example — Quick Start (ToF + IMU + Light + Motors ready)
-  -------------------------------------------------------------
-  Prints ToF grid layout, IMU, and light values.
-  Motors are initialized (no movement here).
-*/
-
-#include <LokaBot.h>
-
-#define In1Pin1 2
-#define In1Pin2 3
-#define In2Pin1 5
-#define In2Pin2 7
-
-LokaMCU   mcu;                 // BNO085 IMU + VCNL4040 Light
-LokaToF   tof;                 // VL53L7CX ToF
-LokaMotor M1(In1Pin1, In1Pin2);
-LokaMotor M2(In2Pin1, In2Pin2);
-
-void setup() {
-  Serial.begin(115200);
-
-  mcu.Init(LIGHT + ROT + GYR + TAP); // enable IMU + Light
-
-  // ToF: choose one
-  tof.Init(Z16);               // 4×4 (default ~30 Hz)
-  // tof.Init(Z64);            // 8×8 (default ~15 Hz)
-
-  tof.Zones();                 // show all zones
-
-  M1.Init();
-  M2.Init();
-}
-
-void loop() {
-  // Update IMU/Light internal state
-  mcu.Run(25);
-
-  // Fetch latest values so Print* shows fresh data
-  mcu.Rot();
-  mcu.Gyro();
-  mcu.Light(amb);
-
-  // ToF grid (auto-fetches when a new frame is ready)
-  tof.PrintZones();
-
-  // Print IMU + Light
-  mcu.PrintIMU();
-  mcu.PrintLight();
-
-  delay(100);
-}
-
-```
 
 ### Motors Control
 ```cpp
