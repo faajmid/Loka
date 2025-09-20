@@ -91,7 +91,7 @@ Here are short versions to get started:
 /*
   Loka Example — Quick Start (ToF + IMU + Light + Motors ready)
   -------------------------------------------------------------
-  Prints ToF grid (SparkFun layout), IMU, and light values.
+  Prints ToF grid layout, IMU, and light values.
   Motors are initialized (no movement here).
 */
 
