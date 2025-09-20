@@ -9,9 +9,8 @@ It brings advanced robotics concepts such as orientation sensing, multi zone dis
 </p>
 <br>
 
-The project also includes the **Loka Library**, which unifies the IMU, light sensor, time of flight sensor, and motor control under one simple API.  
+The project also includes the **Loka Library**, which unifies the IMU, light sensor, time of flight sensor, and motor control under one simple set of functions.  
 This removes the need for multiple libraries and makes it easy to try obstacle avoidance, light following, or IMU based actions.
-
 The goal is to make robotics approachable through a compact and easy to use robot.  
 LokaBot is built to support education, hobby projects, and early research by providing an affordable hands on platform.  
 By combining sensing, decision making, and motion in a tiny robot, Loka hopes to bring STEM learning to more people and inspire newcomers of all ages to explore robotics.
@@ -84,54 +83,63 @@ Instead of three different libraries, you only need `Loka`.
 - `LokaToF` → time of flight distance sensing  
 - `LokaMotors` → motor control  
 
-## Example
+## Examples
 
+Quick demos are included in the `examples/` folder.  
+Here are short versions to get started:
 ```cpp
-#include <Loka.h>
+/*
+  Loka Example — Quick Start (ToF + IMU + Light + Motors ready)
+  -------------------------------------------------------------
+  Prints ToF grid (SparkFun layout), IMU, and light values.
+  Motors are initialized (no movement here).
+*/
 
-LokaMCU mcu;
-LokaToF tof;
+#include <LokaBot.h>
+
+// Motor pins (use PWM-capable pins on your board)
+#define In1Pin1 2
+#define In1Pin2 3
+#define In2Pin1 5
+#define In2Pin2 7
+
+LokaMCU   mcu;                 // BNO085 IMU + VCNL4040 Light
+LokaToF   tof;                 // VL53L7CX ToF
+LokaMotor M1(In1Pin1, In1Pin2);
+LokaMotor M2(In2Pin1, In2Pin2);
 
 void setup() {
   Serial.begin(115200);
 
-  // IMU + Light
+  // Enable IMU (rotation + gyro + tap) and Light
   mcu.Init(LIGHT + ROT + GYR + TAP);
 
   // ToF: choose one
-  tof.Init(Z16);     // 4×4 (default ~30 Hz)
-  // tof.Init(Z64);  // 8×8 (default ~15 Hz)
+  tof.Init(Z16);               // 4×4 (default ~30 Hz)
+  // tof.Init(Z64);            // 8×8 (default ~15 Hz)
 
-  // Print all zones by default
-  tof.Zones();
+  tof.Zones();                 // show all zones
+
+  M1.Init();
+  M2.Init();
 }
 
 void loop() {
-  mcu.Run();         // update IMU + Light
+  // Update sensors
+  mcu.Run(25);                 // IMU + Light update
+  tof.PrintZones();            // auto-fetches when a new frame is ready
 
-  // ToF: print grid (SparkFun-style layout)
-  tof.PrintZones();
-
-  // Optional: set a fixed rate
-  // tof.Run(30);
-
-  // IMU + Light printing
+  // Print readings
   mcu.PrintIMU();
   mcu.PrintLight();
 
   delay(100);
 }
-
 ```
 
-## Examples
-
-Quick demos are included in the `examples/` folder.  
-Here are short versions to get started:
-
-### Motors — LokaMotors
+### Motors Control
 ```cpp
-#include <LokaMotors.h>
+#include <LokaBot.h>
 
 #define In1Pin1 2
 #define In1Pin2 3
@@ -159,7 +167,7 @@ void loop() {
 
 ### Time of Flight VL53L7CX
 ```cpp
-#include <Loka.h>
+#include <LokaBot.h>
 
 LokaToF tof;
 
@@ -189,7 +197,7 @@ void loop() {
 
 ### Light VCNL4040
 ```cpp
-#include <Loka.h>
+#include <LokaBot.h>
 LokaMCU loka;
 
 void setup() {
@@ -207,7 +215,7 @@ void loop() {
 
 ### IMU BNO085
 ```cpp
-#include <Loka.h>
+#include <LokaBot.h>
 LokaMCU loka;
 
 void setup() {
