@@ -64,6 +64,7 @@ The Loka library brings all sensors and controls into one simple set of function
 It wraps the original SparkFun drivers and makes them easier to use.  
 Instead of three different libraries, you only need `Loka`.
 
+
 ## Supported
 
 - **IMU BNO085**: orientation, gyro, tap detection  
