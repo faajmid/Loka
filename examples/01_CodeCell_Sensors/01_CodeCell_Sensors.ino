@@ -18,13 +18,6 @@ void setup() {
   Serial.begin(115200);
   delay(1000);
 
-  // Sensors useful for a small mobile robot:
-  // - LIGHT: ambient light, white light and proximity
-  // - MOTION_ROTATION_NO_MAG: roll, pitch and yaw without magnetometer
-  // - MOTION_GYRO: angular velocity
-  // - MOTION_ACCELEROMETER: acceleration
-  // - MOTION_STATE: stationary / stable / moving state
-  // - MOTION_TAP_DETECTOR: tap and impact events
   myCodeCell.Init(
     LIGHT +
     MOTION_ROTATION_NO_MAG +
@@ -38,14 +31,13 @@ void setup() {
 }
 
 void loop() {
-  // Run and refresh enabled sensors at 20 Hz.
   if (!myCodeCell.Run(20)) return;
 
   float roll = 0.0f, pitch = 0.0f, yaw = 0.0f;
   float gx = 0.0f, gy = 0.0f, gz = 0.0f;
   float ax = 0.0f, ay = 0.0f, az = 0.0f;
 
-  myCodeCell.Motion_RotationRead(roll, pitch, yaw);
+  myCodeCell.Motion_RotationNoMagRead(roll, pitch, yaw);
   myCodeCell.Motion_GyroRead(gx, gy, gz);
   myCodeCell.Motion_AccelerometerRead(ax, ay, az);
 
