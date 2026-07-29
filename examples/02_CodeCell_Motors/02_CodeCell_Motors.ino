@@ -2,7 +2,7 @@
   LokaBot - DRV8833 dual motor test
 
   Uses the official CodeCell Arduino library by Microbots.
-  The four constants below match the LokaBot wiring documentation.
+  LokaBot uses CodeCell pins IO1, IO2, IO5 and IO6 for the DRV8833.
 
   Raise the robot so the wheels are clear before the first test.
 */
@@ -11,11 +11,10 @@
 
 CodeCell myCodeCell;
 
-// DRV8833 inputs connected to the four available CodeCell GPIO pins.
-constexpr uint8_t LEFT_IN1  = 0;
-constexpr uint8_t LEFT_IN2  = 1;
-constexpr uint8_t RIGHT_IN1 = 2;
-constexpr uint8_t RIGHT_IN2 = 3;
+constexpr uint8_t LEFT_IN1  = 1; // CodeCell IO1 -> DRV8833 AIN1
+constexpr uint8_t LEFT_IN2  = 2; // CodeCell IO2 -> DRV8833 AIN2
+constexpr uint8_t RIGHT_IN1 = 5; // CodeCell IO5 -> DRV8833 BIN1
+constexpr uint8_t RIGHT_IN2 = 6; // CodeCell IO6 -> DRV8833 BIN2
 
 constexpr uint16_t PWM_FREQUENCY_HZ = 20000;
 
@@ -56,8 +55,9 @@ void setup() {
   Serial.begin(115200);
   delay(1000);
 
-  // No onboard sensor is required, but Init keeps CodeCell power management active.
-  myCodeCell.Init();
+  // LIGHT is enabled so Init() uses a documented CodeCell configuration
+  // while Run() continues power, battery and status-LED management.
+  myCodeCell.Init(LIGHT);
   stopMotors();
 
   Serial.println("LokaBot motor test begins in 3 seconds");
@@ -65,7 +65,6 @@ void setup() {
 }
 
 void loop() {
-  // Keep CodeCell power and battery management updated.
   myCodeCell.Run(20);
 
   runStep("Forward", 35, 35, 1500);
