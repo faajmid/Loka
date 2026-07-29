@@ -20,7 +20,7 @@ This repository focuses on the robot's mechanical design, hardware integration, 
 | Printed parts | Body, wheel hubs and tire mold | — | Available in the [`3D`](3D) folder |
 | Tire material | DoYB Mold Making A30 silicone, 1:1 mix | — | Used to cast soft tires |
 
-> **Sensor identification:** the previous Loka code called the sensor `VL53L7CX`, but its implementation embedded SparkFun's `VL53L5CX` driver. The new repository names the software dependency accurately. Check the marking or seller specification on your physical ToF module before uploading the SparkFun example.
+> **Sensor compatibility:** Verify that the physical Time-of-Flight module is VL53L5CX-compatible before uploading the SparkFun example.
 
 ## Wiring
 
