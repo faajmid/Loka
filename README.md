@@ -2,7 +2,7 @@
 
 LokaBot is an open-source, palm-sized autonomous robot built around the **Microbots CodeCell C3**, a **DRV8833 dual motor driver**, and a **VL53L5CX-compatible multi-zone Time-of-Flight sensor**.
 
-The project focuses on compact mechanical design, wiring, assembly, and practical robotics experiments. It uses trusted upstream Arduino libraries directly instead of maintaining a separate Loka software library.
+The project focuses on compact mechanical design, hardware integration, wiring, assembly, and practical robotics experiments. It includes detailed hardware documentation and Arduino examples for building, testing, and developing robotics applications.
 
 <p align="center">
   <img src="images/lokabot.jpg" alt="LokaBot" width="500"/>
@@ -52,7 +52,6 @@ Loka/
 │   └── README.md
 ├── images/
 ├── ACKNOWLEDGEMENTS.md
-├── MIGRATION.md
 ├── LICENSE
 └── README.md
 ```
@@ -98,7 +97,7 @@ Uses the official CodeCell GPIO/PWM API to control the external DRV8833 and both
 
 Uses SparkFun's maintained VL53L5CX Arduino library to read and print a 4×4 distance frame. It also calculates left, centre, and right obstacle distances and prints a basic steering decision.
 
-> The previous custom Loka implementation described the sensor as VL53L7CX while embedding SparkFun's VL53L5CX driver. The new documentation identifies the software dependency accurately. Verify the marking or seller specification of the physical ToF module before use.
+> **Compatibility note:** Verify that the physical Time-of-Flight module is VL53L5CX-compatible before uploading the example.
 
 ## First power-up checklist
 
