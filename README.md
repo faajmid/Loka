@@ -51,14 +51,11 @@ Loka/
 │   ├── images/
 │   └── README.md
 ├── images/
-├── src/                         # legacy files; not used by current examples
 ├── ACKNOWLEDGEMENTS.md
 ├── MIGRATION.md
 ├── LICENSE
 └── README.md
 ```
-
-The current examples do not include or compile anything from `src/`. That folder contains historical files from the former custom-library version and is retained only for reference. New users should use the official CodeCell and SparkFun libraries described below.
 
 ## Hardware and assembly
 
