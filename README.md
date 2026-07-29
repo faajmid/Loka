@@ -8,8 +8,24 @@ The project focuses on compact mechanical design, wiring, assembly, and practica
   <img src="images/lokabot.jpg" alt="LokaBot" width="500"/>
 </p>
 
+## LokaBot in action
+
+### Obstacle avoidance
+
 <p align="center">
   <img src="images/lokabot_avoidance.GIF" alt="LokaBot obstacle avoidance" width="500"/>
+</p>
+
+### Light and proximity sensing
+
+<p align="center">
+  <img src="images/lokabot_lights.GIF" alt="LokaBot light and proximity sensing" width="500"/>
+</p>
+
+### Motor movement
+
+<p align="center">
+  <img src="images/lokabot_motors.GIF" alt="LokaBot motor movement" width="500"/>
 </p>
 
 ## Highlights
@@ -35,10 +51,14 @@ Loka/
 │   ├── images/
 │   └── README.md
 ├── images/
+├── src/                         # legacy files; not used by current examples
 ├── ACKNOWLEDGEMENTS.md
+├── MIGRATION.md
 ├── LICENSE
 └── README.md
 ```
+
+The current examples do not include or compile anything from `src/`. That folder contains historical files from the former custom-library version and is retained only for reference. New users should use the official CodeCell and SparkFun libraries described below.
 
 ## Hardware and assembly
 
